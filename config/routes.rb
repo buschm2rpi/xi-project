@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get   'home'  => 'static_pages#home'
   get   'about' => 'static_pages#about'
   get   'contact' => 'static_pages#contact'
+  get   'data' => 'static_pages#data', :defaults => { :format => 'json' }
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
