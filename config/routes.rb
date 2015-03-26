@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
   resources :cities
   resources :city_names
+  resources :industries
   
 
   # The priority is based upon order of creation: first created -> highest priority.
