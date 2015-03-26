@@ -1,0 +1,2 @@
+module CityNamesHelper
+end

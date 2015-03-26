@@ -1,3 +1,12 @@
 <p>Play around with our data visualization app.</p>
-
+<div class="container">
+	<%= form_for @city do |f| %>
+	<div class"control-group">
+		<%= f.label :city, class: 'control-label'%>
+		<div class='controls'>
+			<%= collection_select( :city, :name, CityName.all, :name, :display_name, {}, {:multiple => false} )%>
+		</div>
+	</div>
+	<% end %>
+</div>
 <svg id="graph"></svg> 

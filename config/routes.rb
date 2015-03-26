@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get   'contact' => 'static_pages#contact'
   get   'data' => 'static_pages#data', :defaults => { :format => 'json' }
   
+  resources :cities
+  resources :city_names
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

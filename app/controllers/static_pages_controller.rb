@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @city = City.new
   end
 
   def about
