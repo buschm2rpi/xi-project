@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'cities/new'
+
   root  'static_pages#home'
   
   get   'home'  => 'static_pages#home'
