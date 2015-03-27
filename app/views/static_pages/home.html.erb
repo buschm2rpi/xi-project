@@ -1,6 +1,6 @@
 <p>Play around with our data visualization app.</p>
 <div class="container">
-	<%= form_for @city do |f| %>
+	<%= form_for @city , url: data_path, :remote => true, method: :get do |f| %>
 	<div class"control-group">
 		<%= f.label :city, class: 'control-label'%>
 		<div class='controls'>
@@ -13,6 +13,17 @@
 			<%= collection_select( :city, :industry, Industry.all, :name, :display_name, {}, {:multiple => false} )%>
 		</div>
 	</div>
+	<div class"control-group">
+		<%= f.label "Display Data", class: 'control-label'%>
+		<div class='controls'>
+			<%= f.radio_button :midsalary, 'midsalary', :checked => true %>
+			<%= f.label :midsalary, 'Median Salary', :value => 'midsalary'%>
+			<%= f.radio_button :midsalary, 'midsalary' %>
+			<%= f.label :midsalary, 'Not Median Salary', :value => 'midsalary'%>
+		</div>
+	</div>
+	<%= f.submit "Plot" %>
 	<% end %>
 </div>
-<svg id="graph"></svg> 
+<svg id="graph">
+</svg> 

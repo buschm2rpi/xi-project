@@ -10,10 +10,12 @@ class StaticPagesController < ApplicationController
   end
   
   def data
+    @city = City.new(params[:city])
     respond_to do |format|
       format.json {
         render :json => [1,2,3,4,5]
       }
     end
   end
+  
 end

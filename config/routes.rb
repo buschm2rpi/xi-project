@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get   'home'  => 'static_pages#home'
   get   'about' => 'static_pages#about'
   get   'contact' => 'static_pages#contact'
-  get   'data' => 'static_pages#data', :defaults => { :format => 'json' }
+  get   'data' => 'cities#graph' #, :defaults => { :format => 'json' }
   
   resources :cities
   resources :city_names

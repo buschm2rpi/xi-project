@@ -1,5 +1,5 @@
-
-$.ajax({
+//$(form).bind('ajax:success', function(){
+	$.ajax({
            type: "GET",
            contentType: "application/json; charset=utf-8",
            url: 'data',
@@ -10,7 +10,8 @@ $.ajax({
            error: function (result) {
                error();
            }
-       });
+	});
+//});
 
 function draw(data) {
     var color = d3.scale.category20b();
@@ -21,7 +22,7 @@ function draw(data) {
         .range([0, width])
         .domain([0, d3.max(data)]);
 
-    var chart = d3.select("#graph")
+    var chart = d3.select("#graph").append("svg")
         .attr("width", width)
         .attr("height", barHeight * data.length);
 
